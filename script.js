@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(form.action, {
       method: "POST",
       body: formData,
+      mode: "no-cors", // Add this line
     })
       .then(() => {
         window.location.href = "success.html"; // Redirect to success page
