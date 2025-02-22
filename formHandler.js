@@ -15,22 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle form submission
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission
 
+    const form = event.target;
     const formData = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", form.action, true);
-    xhr.setRequestHeader("Accept", "application/json");
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        alert("Form submitted successfully!");
-        form.reset();
-      } else if (xhr.readyState === 4) {
-        alert("Error submitting form.");
-      }
-    };
-
-    xhr.send(formData);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Form submitted successfully!");
+        } else {
+          return response.json().then((error) => {
+            throw new Error(error.message);
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("There was an error submitting the form. Please try again.");
+      });
   });
 });
