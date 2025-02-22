@@ -11,10 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`${key}: ${value}`);
     }
 
-    fetch(form.action, {
+    fetch("/webhook", {
       method: "POST",
       body: formData,
-      mode: "no-cors", // Add this line
     })
       .then(() => {
         window.location.href = "success.html"; // Redirect to success page
@@ -22,5 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         console.error("Error!", error.message);
       });
+  });
+
+  const searchForm = document.querySelector(".search-form");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const query = searchForm.querySelector("input").value;
+    alert(`Searching for: ${query}`);
   });
 });

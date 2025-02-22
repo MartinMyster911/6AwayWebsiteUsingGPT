@@ -25,10 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`${key}: ${value}`);
     }
 
-    fetch(form.action, {
+    fetch("/webhook", {
       method: "POST",
       body: formData,
-      mode: "no-cors", // Add this line
     })
       .then(() => {
         window.location.href = "success.html"; // Redirect to success page
