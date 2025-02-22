@@ -23,18 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(form.action, {
       method: form.method,
       body: formData,
-      headers: {
-        Accept: "application/json",
-      },
+      mode: "no-cors",
     })
-      .then((response) => {
-        if (response.ok) {
-          alert("Form submitted successfully!");
-        } else {
-          return response.json().then((error) => {
-            throw new Error(error.message);
-          });
-        }
+      .then(() => {
+        window.location.href = "success.html"; // Redirect to success page
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
