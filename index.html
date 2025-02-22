@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Plus - Dubai</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Real Estate Plus</h1>
+      <p>
+        Find your dream property in Dubai. Whether you're looking for luxury
+        apartments, villas, or commercial properties, we are here to help you
+        make the right choice.
+      </p>
+
+      <div class="image-gallery">
+        <img
+          src="https://cdn.midjourney.com/d80a62a4-b891-46b7-bd5c-1f95310ea159/0_1.png"
+          alt="Dubai Real Estate"
+        />
+        <img
+          src="https://cdn.pixabay.com/photo/2019/10/06/10/00/dubai-4536323_1280.jpg"
+          alt="Luxury Apartments"
+        />
+        <img
+          src="https://cdn.pixabay.com/photo/2017/01/13/20/24/dubai-1978705_1280.jpg"
+          alt="Villas in Dubai"
+        />
+      </div>
+
+      <p>
+        Enter your real estate needs below and let us assist you in finding the
+        perfect property.
+      </p>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <select name="property_type" required>
+          <option value="">Select Property Type</option>
+          <option value="apartment">Apartment</option>
+          <option value="villa">Villa</option>
+          <option value="commercial">Commercial</option>
+          <option value="land">Land</option>
+        </select>
+        <textarea
+          name="requirements"
+          placeholder="Describe your requirements"
+          rows="4"
+          required
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
