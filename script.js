@@ -30,4 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const query = searchForm.querySelector("input").value;
     alert(`Searching for: ${query}`);
   });
+
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Message sent! We will get back to you soon.");
+  });
 });
