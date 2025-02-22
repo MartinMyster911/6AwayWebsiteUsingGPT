@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`${key}: ${value}`);
     }
 
-    fetch(form.action, {
-      method: form.method,
+    fetch("/submit-form", {
+      method: "POST",
       body: formData,
     })
       .then(() => {
